@@ -14,8 +14,7 @@ int main()
     char str2[N];
     __asm
     {
-BEGIN:                          ; считываем строки
-
+        // считываем строки
         lea     eax, vvod1      ; поместили в eax адрес на vvod1 
         push    eax             ; закинули eax в стэк для дальнейшего вывода 
         call    printf          ; вывели vvod1
@@ -70,15 +69,14 @@ END:
         jmp     START           ; возвращаемся в главный цикл
 
 FOUND:
-        mov     [res][esi], cl
+        mov     [res][esi], cl  ; поместили в res совпавший символ 
         inc     edi             ; увеличили счетчик совпавших символов
         jmp     START           ; ушли в главный цикл
     
 NEW_RES:
         cmp     edi, 0          ; проверяем, есть ли совпавшие символы
         je      NOT_SOVP        
-
-        //inc     edi 
+ 
         mov     [res][edi], 0
         jmp     PRINT_RES
 
