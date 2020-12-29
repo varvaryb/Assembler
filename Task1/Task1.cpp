@@ -78,6 +78,8 @@ NEW_RES:
         cmp     edi, 0          ; проверяем, есть ли совпавшие символы
         je      NOT_SOVP        
 
+        //inc     edi 
+        mov     [res][edi], 0
         jmp     PRINT_RES
 
 NOT_SOVP:
