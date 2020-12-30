@@ -37,7 +37,9 @@ double Teulor(double x, double epsilon = 1e-5)
 
 int main()
 {
-    std::cout << Teulor(1) << std::endl;
+    double x = 1;
+    std::cout << exp(x) << std::endl;
+    std::cout << Teulor(x) << std::endl;
 
     return 0;
 }
